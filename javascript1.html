@@ -16,9 +16,85 @@
     <body>
         
         <script>
+            /*
             let message; //creates a variable
             message = 'Hello'; //Store string 'Hello' in variable message in the memory 
-            alert (message);//displays the virtual box
+           // alert (message);//displays the virtual box
+            //Just don't put reserved words.
+
+            //Use const to declare an unchanging variable - cannot be reassigned
+            const myBirthday = 19.052;
+            const myFloat = 6.667;
+            //alert(typeof(myBirthday)); 
+            //alert(typeof(message));
+
+
+            //What order you put the increment/decrement operators is important
+            //Do check out operator precedence
+            //NaN - not a number
+
+            let num1 = 10;
+            let num2 = 11;
+
+            console.log(++num1);
+            console.log(--num2);
+            console.log (isNaN(myBirthday));
+
+
+
+            //Operand - what operators applied to. In the instance below, left operand is 5 and right operand is 2
+            //Binary if it has two operands.
+            let z  = 5*2;
+
+
+            //An operator is unary if it has a single operand
+            let a = 1;
+            a= -a; //unary negation was applied
+
+
+
+            //Number objects are not the same as numbers but their values can be display to be the same
+            let x = 500; //number
+            let y = new Number (500); //Number object
+
+            //Postfix - old value
+            console.log (x++);
+            //Prefix - new value
+            console.log (++x);
+
+            //Below is the standard equality operators (== and !=) compare 2 operands without regards to their type
+            console.log (x==y); //true  
+
+            //Strict equality operators - considers both operands and their types.
+            console.log (x===y); //false
+
+
+            //String concatenation
+            // '=' is also an assignment operator but has low precendence
+            let s ="1" + "14";
+            console.log (s);
+            
+            //Chaining assignment operators
+            let d,e,f;
+            d = e =f = "4" + 4;
+            console.log (d);
+            console.log (e);
+
+            //Converts non numbers using unary +
+            console.log (+true); //1
+            console.log (+false);//0
+            console.log (+""); //0
+
+            //Comma operator - evaluate several expressions but only the reslut of the last one is returned
+            let u = (1+2, 3+4);
+            alert (u); //7 (result of 3+4)
+            */
+
+
+            let number1 = 10;
+            console.log (9*number1);
+            let number2 = 7*number1;
+            console.log (number2);
 
         </script>
     </body>
