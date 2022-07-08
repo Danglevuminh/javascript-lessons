@@ -15,16 +15,90 @@
             //Built-in functions
             const myNumber = Math.random();
 
-            //this is pretty cool - in Javascript you can set the value of the parameter
-            function myFunction(name = 'Default') {
-             alert(`hello ${name}`);
-                }
-
+            //this is pretty cool - in Javascript you can set the value of the parameter variable - it's called a default value 
             //User-defined function
-
+            //if you pass in no argument, the name paramater will be set to 'undefined' so you should set a default variable to avoid
+            function myFunction(name = 'Dang') {
+             alert(`hello ${name}`);
+            }
+            //When the value 'Ahe' is passed as a function paramater, it's called an argument
+            //REMEMBER, a function is a value
             myFunction('Ahe');
             myFunction ();
             // calls the function once
+
+
+            //return without a value will immediately EXIT the code
+            function showMovie(age) {
+                if ( !checkAge(age) ) {
+                 return;
+            }
+
+            alert( "Showing you the movie" ); // (*)
+                // ...
+
+            }
+
+            //A function is a value so it can work with other values
+           /* 
+            function sayHi() {   // (1) create
+                alert( "Hello" );
+            }
+
+            let func = sayHi;    // (2) copy
+
+            func(); // Hello     // (3) run the copy (it works)!
+            sayHi(); // Hello    //     this still works too (why wouldn't it)
+            */
+
+            //CALLBACK function - 
+            /*
+            function ask(question, yes, no) {
+            if (confirm(question)) yes()
+            else no();
+            }
+            */
+            ask(
+                "Do you agree?",
+                function() { alert("You agreed."); },
+                function() { alert("You canceled the execution."); }
+                );
+
+
+                // Function Declaration - this can be called earlier than when it is defined - it is also only visible inside a code block
+                    function sum(a, b) {
+                    return a + b;
+                }
+
+                let age = 16; // take 16 as an example
+
+                    if (age < 18) {
+                        welcome();               // \   (runs)
+                           //  |
+                    function welcome() {     //  |
+                        alert("Hello!");       //  |  Function Declaration is available
+                        }                        //  |  everywhere in the block where it's declared
+                           //  |
+                            welcome();               // /   (runs)
+
+                                } else {
+
+                    function welcome() {
+                       alert("Greetings!");
+                        }
+                                        }
+
+// Here we're out of curly braces,
+// so we can not see Function Declarations made inside of them.
+
+welcome(); // Error: welcome is not defined
+
+                // Function Expression - this is created when the code reaches it and is only usable from that moment onwards.
+                    let sum = function(a, b) {
+                    return a + b;
+                    };
+
+    
         </script>
     </body>
 </html>
