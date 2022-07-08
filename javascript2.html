@@ -1,0 +1,119 @@
+html <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <button> Press me baby</button>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            //The special null value refers to a value that specifies 'nothigness'
+            let life = null
+            //The special undefined value refers to a 'value that is not assigned'
+            let happy = undefined
+
+            const string = 'The end of days';
+            console.log (string);
+            
+            //Escaping characters in a string
+            const sentence = "I\'ve got this";
+            console.log (sentence);
+
+            //String concatenation with variables - use backtick
+            //const name = 'Dang';
+            const greeting = `Hello there, ${name}`; //backtick, dollar sign and curly brackets.
+            console.log (greeting);
+
+            const a = 'Hello, ';
+            const b = 'How are you? ';
+            const joinedString = `${a}${b}`;
+            console.log(joinedString);
+
+
+            //Greet function for button
+            const button = document.querySelector ('button');
+            
+            
+            function greet() {
+                const name = prompt('What is your name?');
+                alert(`Hello ${name}, nice to see you!`);
+            }
+                button.addEventListener('click', greet);
+
+
+            //Comparison of different types - JS converts values to numbers
+            console.log ('2'> 1); //true, string '2' becomes number 2
+
+            //Regular equality cannot differentiate 0 from false - the same value not the same type
+            console.log (0 == false); //true
+            console.log (undefined ==null);
+
+            //boolean conversion
+            //falsy value - always return false - empty string, number 0, undefined, NaN are all false
+            if (0){
+                console.log ("always true");
+            } else {
+                console.log ("always false");
+            }
+
+            //truthy value - always return truth - always return true for the condition
+            if (1){
+                console.log ("always true");
+            }
+
+            //Conditional operator - '?'
+            //let variable = condition?value1:value2:
+            //If the condition is truthy then value1 is returned, if not then value 2
+            let age = 18;
+            let accessAllowed =(age>18)?true:false; //false
+
+            //Any string except an empty one becomes true in a logical context
+            if ("0"){ //true because it's NOT EMPTY
+                //alert ('Hello');
+            }
+
+            //Logical operators
+            // OR || result is always true except when both operands are false
+          /*  alert( true || true );   // true
+            alert( false || true );  // true
+            alert( true || false );  // true
+            alert( false || false ); // false
+            */
+            //more OR || operators - goes from left to right - returns the first truthy value
+            console.log( 1 || 0 ); // 1 (1 is truthy)
+            console.log( null || 1 ); // 1 (1 is the first truthy value)
+            console.log( null || 0 || 1 ); // 1 (the first truthy value)
+            console.log( undefined || null || 0 ); // 0 (all falsy, returns the last value)
+        
+            
+
+            //&& AND finds the first falsy value - evaluates form left to right - result if false, stop the operand
+            
+         // if the first operand is truthy,
+        // AND returns the second operand:
+        //alert gives an undefined value
+        alert( 1 && 0 ); // 0
+        alert( 1 && 5 ); // 5
+
+    // if the first operand is falsy,
+    // AND returns it. The second operand is ignored
+        alert( null && 5 ); // null
+        alert( 0 && "no matter what" ); // 0
+        
+        </script>
+
+
+    </body>
+</html>
