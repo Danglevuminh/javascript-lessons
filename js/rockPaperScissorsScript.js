@@ -19,9 +19,10 @@ function computerPlay(){
             break;
     }
     return computerAnswer;
-    console.log (computerAnswer);
+    
 
 }
+
 
 //This function takes in an answer from the player side - rock, papers or scissors
 function playerSelection(){
@@ -34,12 +35,15 @@ function playerSelection(){
         playerFinalAnswer = playerInput.toLowerCase();
         if (playerFinalAnswer === "rock" || playerFinalAnswer === "scissors" ||playerFinalAnswer === "paper"){
             validCheck = true;
-            return playerFinalAnswer;
         } else{
             alert("Invalid input. Please enter another answer again");
         }
     }
+    return playerFinalAnswer;
 }
+
+
+
 
 
 //This function calls computerPlay() and playerSelection() and returns an answer on whether computer or player wins
@@ -47,45 +51,46 @@ function playRound(computerAnswer, playerAnswer){
     let result = "";
 
     //nested switch statements to see if player win or lose against computer answer
-    switch (playerAnswer){
+    switch (computerAnswer){
         case 'rock':
-            switch(computerAnswer){
+            switch (playerAnswer){
                 case 'rock':
-                    result = 'draw';
+                    result = "draw";
                     break;
                 case 'paper':
-                    result = 'computer';
+                    result = "player";
                     break;
                 case 'scissors':
-                    result = 'player';
+                    result = "computer";
                     break;
-                    
             }
+            break;
         case 'paper':
-            switch(computerAnswer){
+            switch (playerAnswer){
                 case 'rock':
-                    result = 'player';
+                    result = "computer";
                     break;
                 case 'paper':
-                    result = 'draw';
+                    result = "draw";
                     break;
                 case 'scissors':
-                    result = 'computer';
+                    result = "player";
                     break;
             }
-
+            break;
         case 'scissors':
-            switch(computerAnswer){
+            switch (playerAnswer){
                 case 'rock':
-                    result = 'computer';
+                    result = "player";
                     break;
                 case 'paper':
-                    result = 'player';
+                    result = "computer";
                     break;
                 case 'scissors':
-                    result = 'draw';
+                    result = "draw";
                     break;
             }
+            break;
     }
 
     return result;
@@ -99,13 +104,16 @@ function game(){
         let playerSide = playerSelection();
         let computerSide = computerPlay();
         let result = playRound(computerSide, playerSide);
-        let res =""
+        console.log ("You played "+ playerSide);
+        console.log ("Computer played " + computerSide);
+        let res ="";
         let beatString;
         //switch statements check results and decide the correct string
         switch (result){
             case 'player':
                 beatString = playerSide + " beats " + computerSide;
                 res = "win";
+                playerWins++;
                 break;
                
             case 'computer':
@@ -121,6 +129,6 @@ function game(){
         let winningAlert = "You " + res + "! " + beatString;
         console.log (winningAlert)
     }
-    console.log ("You beat computer " + playerWins + " times!");
+    console.log ("You beat computer " + playerWins + " out of 5 times!");
     
 }
