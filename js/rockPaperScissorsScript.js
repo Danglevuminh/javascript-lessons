@@ -102,7 +102,7 @@ function playRound(computerAnswer, playerAnswer){
 
 //This function calls on the playRound function 5 times before it ends. The main function to start the game;
 function game(){
-    let playerWins = 0;
+    const playerWins = 0;
     for (let i  = 0; i<5; i++){
         //Variable declaration
         let playerSide = playerSelection();
