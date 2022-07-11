@@ -101,32 +101,38 @@ function playRound(computerAnswer, playerAnswer){
 function game(){
     let playerWins = 0;
     for (let i  = 0; i<5; i++){
+        //Variable declaration
         let playerSide = playerSelection();
         let computerSide = computerPlay();
+        let winLoseString ="";
+        let beatString;
+
+        //Calling in the functions
         let result = playRound(computerSide, playerSide);
+
+        //Printing out the results I play and what the computer played
         console.log ("You played "+ playerSide);
         console.log ("Computer played " + computerSide);
-        let res ="";
-        let beatString;
+      
         //switch statements check results and decide the correct string
         switch (result){
             case 'player':
                 beatString = playerSide + " beats " + computerSide;
-                res = "win";
+                winLoseString = "win";
                 playerWins++;
                 break;
                
             case 'computer':
                 beatString = computerSide + " beats " + playerSide;
-                res = "lose";
+                winLoseString = "lose";
                 break;
             case 'draw':
                 beatString = "Nobody beats each other!"
-                res= "draw";
+                winLoseString= "draw";
                 break;
         }
 
-        let winningAlert = "You " + res + "! " + beatString;
+        let winningAlert = "You " + winLoseString + "! " + beatString;
         console.log (winningAlert)
     }
     console.log ("You beat computer " + playerWins + " out of 5 times!");
