@@ -52,8 +52,8 @@ function playRound(computerAnswer, playerAnswer){
     let result = "";
 
     //nested switch statements to see if player win or lose against computer answer
-    //Checks for computer answer first to see the computer chooses (rock/paper/scissors) then compare those cases to 
-    //the playerInput to see who wins --> retruns results
+    //Checks for computer answer first to see the computer chooses (rock/paper/scissors) then compare the case to 
+    //the playerInput to see who wins --> returns winner
     switch (computerAnswer){
         case 'rock':
             switch (playerAnswer){
@@ -100,7 +100,7 @@ function playRound(computerAnswer, playerAnswer){
 }
 
 
-//This function runs the code 5 times before exiting for the game. Calls on the playRound function to run the game 5 times.
+//This function calls on the playRound function 5 times before it ends. The main function to start the game;
 function game(){
     let playerWins = 0;
     for (let i  = 0; i<5; i++){
@@ -110,14 +110,14 @@ function game(){
         let winLoseString ="";
         let beatString;
 
-        //Calling in the functions
+        //Calling in playRound function
         let result = playRound(computerSide, playerSide);
 
-        //Printing out the results I play and what the computer played
+        //Printing out the results of the player and the computer
         console.log ("You played "+ playerSide);
         console.log ("Computer played " + computerSide);
       
-        //switch statements check results and decide the correct string
+        //switch statements check results and decide the correct string to be placed in the winningAlert variable
         switch (result){
             case 'player':
                 beatString = playerSide + " beats " + computerSide;
@@ -137,7 +137,7 @@ function game(){
 
         let winningAlert = "You " + winLoseString + "! " + beatString;
         console.log (winningAlert)
-    }
+    } //end of for loop
     console.log ("You beat computer " + playerWins + " out of 5 times!");
     
 }
