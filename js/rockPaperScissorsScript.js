@@ -30,6 +30,7 @@ function playerSelection(){
     let playerInput;
     let playerFinalAnswer;
     //checks to see if the input is valid or not - if it completely fits rock, paper, scissors in type and value it passes, if not the loop repeats until the player inputs validly
+    //lowercase all user inputs then checks to see if the finalAnswer is rock/scissors/paper --> valid; else --> continues prompting
     while (validCheck === false){
         playerInput = prompt("Please put rock, paper or scissors", "");
         playerFinalAnswer = playerInput.toLowerCase();
@@ -51,6 +52,8 @@ function playRound(computerAnswer, playerAnswer){
     let result = "";
 
     //nested switch statements to see if player win or lose against computer answer
+    //Checks for computer answer first to see the computer chooses (rock/paper/scissors) then compare those cases to 
+    //the playerInput to see who wins --> retruns results
     switch (computerAnswer){
         case 'rock':
             switch (playerAnswer){
